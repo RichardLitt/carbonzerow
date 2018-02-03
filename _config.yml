@@ -1,0 +1,15 @@
+# Site settings
+title: Carbon Zerow
+email: carbonzerow@gmail.com
+description: "The first carbon neutral expedition: 3000 miles across the Atlantic."
+baseurl: ""
+url: "https://richardlitt.github.io/carbonzerow"
+
+exclude: [vendor]
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+sass:
+  style: :compressed
