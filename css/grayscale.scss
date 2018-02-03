@@ -3,7 +3,7 @@
 
 // Variables
 
-$primary: #dd7771;
+$primary: #6fa5db;
 $dark: #000;
 $light: #fff;
 
@@ -91,7 +91,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,0.3);
     text-transform: uppercase;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #dd7771;
+    background-color: $primary;
 }
 
 .navbar-brand {
@@ -148,7 +148,7 @@ a:focus {
 
     .top-nav-collapse {
         padding: 0;
-        background-color: #dd7771;
+        background-color: $primary;
     }
 
     .navbar-custom.top-nav-collapse {
@@ -239,7 +239,7 @@ a:focus {
         font-size: 48px;
     }
 
-    
+
 
     .intro-text {
         text-align: center;
@@ -314,7 +314,7 @@ a:focus {
 .btn-circle:focus {
     outline: none;
     color: #000;
-    background: #dd7771; // Same as $primary
+    background: $primary; // Same as $primary
 }
 
 .page-scroll {

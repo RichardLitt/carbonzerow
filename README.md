@@ -1,4 +1,4 @@
-# CarbonZerow.org
+# carbonzerow.org
 
 This is the site for Carbon Zerow. It was forked from accessland.org, which was forked from shutthebackdoor.net, with some pretty minor changes.
 
