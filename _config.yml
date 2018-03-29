@@ -5,7 +5,7 @@ description: "The first carbon neutral expedition: 3000 miles across the Atlanti
 baseurl: ""
 url: "https://richardlitt.github.io/carbonzerow"
 
-exclude: [vendor]
+exclude: ["README.md", "Rakefile", "Gulpfile.js", "package*", "node_modules", "src"]
 
 # Build settings
 markdown: kramdown
