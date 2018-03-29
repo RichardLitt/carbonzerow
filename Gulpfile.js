@@ -1,28 +1,36 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var pngcrush = require('imagemin-pngcrush');
+var gulp = require('gulp')
+var uglify = require('gulp-uglify')
+var changed = require('gulp-changed')
+var imagemin = require('gulp-imagemin')
+var rename = require('gulp-rename')
+var pngcrush = require('imagemin-pngcrush')
 
 var paths = {
-  js: ['js/**/*.js'],
-  img: ['img_src/**/*.png'],
-};
+  js: ['src/js/**/*.js', '!src/js/**/*.min.js'],
+  jsMin: ['src/js/**/*.min.js'],
+  img: ['src/img/**/*.png', 'src/img/**/*.jpg'],
+  imgDist: 'assets/img'
+}
 
-gulp.task('js', function() {
+// Disabled. Currently, only minified files are used anyway
+gulp.task('js', function () {
   gulp.src(paths.js)
     .pipe(uglify())
-    .pipe(gulp.dest('dist'))
-});
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('assets/js'))
+  gulp.src(paths.jsMin)
+    .pipe(gulp.dest('assets/js'))
+})
 
 gulp.task('img', function () {
-    return gulp.src('img_src/*')
+  return gulp.src(paths.img)
         .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngcrush()]
+          progressive: true,
+          svgoPlugins: [{removeViewBox: false}],
+          use: [pngcrush()]
         }))
-        .pipe(gulp.dest('img'));
-});
+        .pipe(changed(paths.imgDist))
+        .pipe(gulp.dest(paths.imgDist))
+})
 
-
-gulp.task('default', ['js', 'img']);
+gulp.task('default', ['js', 'img'])
