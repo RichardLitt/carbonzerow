@@ -8,7 +8,7 @@ var pngcrush = require('imagemin-pngcrush')
 var paths = {
   js: ['src/js/**/*.js', '!src/js/**/*.min.js'],
   jsMin: ['src/js/**/*.min.js'],
-  img: ['src/img/**/*.png', 'src/img/**/*.jpg'],
+  img: ['src/img/**/*.png', 'src/img/**/*.jpg', 'src/img/**/*.jpeg'],
   imgDist: 'assets/img'
 }
 
